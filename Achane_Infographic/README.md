@@ -4,6 +4,7 @@
 
 - Page structure, player name/title, subtitle, and footer copy: `index.html`.
 - Colors, layout, and ranking text gradients: `styles.css`; common brand colors are declared in `:root`. `.rank-1` is gold, `.rank-2` is silver, `.rank-3` is rose gold, and `.rank-4, .rank-5` are bronze. These are CSS `background-clip: text` gradients, not colors baked into images.
+- Typography: all text inherits Google Sans Flex from `body` in `styles.css`, with a condensed width to fit the artboard. Google Fonts stylesheet links and preconnects are in `index.html`; `--font-family` defines the shared family and fallbacks.
 - Stat abbreviations, descriptions, ranking numbers, and icon filenames: `const stats` in `script.js`.
 - Artboard scaling and stat-row rendering: `script.js`, loaded with `defer` after the HTML is parsed.
 - Images: `assets/achane-cutout.png` and `assets/dolphins-logo.png`.

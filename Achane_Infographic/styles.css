@@ -1,8 +1,8 @@
 /* 1536 Ã— 1024 artboard. script.js fits it to the browser viewport. */
-:root { --aqua:#20f0f3; --orange:#fa7414; --white:#f8fcfc; }
+:root { --aqua:#20f0f3; --orange:#fa7414; --white:#f8fcfc; --font-family:"Google Sans Flex",Arial,sans-serif; }
 * { box-sizing:border-box; }
 html,body { margin:0; min-height:100%; background:#071114; }
-body { display:grid; place-items:center; overflow-x:hidden; }
+body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--font-family); font-optical-sizing:auto; font-stretch:condensed; }
 .frame {position:relative;width: 1536px !important;height:1024px;overflow:hidden;zoom: 1;}
 .stage {
   position:relative; width:1536px; height:1024px; overflow:hidden;
@@ -36,7 +36,6 @@ body { display:grid; place-items:center; overflow-x:hidden; }
 .team-logo {position:absolute;left:432px;top:1px;width:197px;height:176px;object-fit:contain;z-index:4;
   filter:drop-shadow(0 5px 8px rgba(0,0,0,.72)); }
 .headline {position:absolute;left:643px;top:5px;z-index:4;margin:0;white-space:nowrap;
-  font-family:"Noto Sans Display Condensed","Liberation Sans Narrow",Arial,sans-serif;
   font-size:107px;font-weight:1000;font-style:italic;letter-spacing:2px;line-height:1;
   transform:scaleX(.94);transform-origin:left top;
   text-shadow:0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);}
@@ -47,7 +46,7 @@ body { display:grid; place-items:center; overflow-x:hidden; }
   transform:skewX(-13deg);background:linear-gradient(180deg,#502010 0%,#a43906 45%,#2b1412 100%);
   border:3px solid #ff9b25;box-shadow:inset 0 2px 11px rgba(253,155,38,.28),0 0 15px rgba(255,108,10,.32),0 4px 9px #000a;}
 .season-flag span {display:block;text-align:center;transform:skewX(13deg);
-  color:#fcf7f1;font-family:"Noto Sans Display Condensed",Arial,sans-serif;font-size:39px;font-style:italic;font-weight:850;
+  color:#fcf7f1;font-size:39px;font-style:italic;font-weight:850;
   line-height:47px;letter-spacing:7px;text-shadow:0 3px 4px black;}
 .flag-spark {position:absolute;top:140px;height:3px;z-index:3;background:#ff9b4b;filter:drop-shadow(0 0 9px #ff8023);}
 .spark-left {left:627px;width:78px;}.spark-right{left:1380px;width:106px;}
@@ -79,8 +78,8 @@ body { display:grid; place-items:center; overflow-x:hidden; }
   transform:translate(-50%,-50%) skewX(11deg);
   filter:drop-shadow(0 2px 2px #00191e) drop-shadow(0 0 3px rgba(181,255,255,.18));
   }
-.stat-short {flex:0 0 227px;display:flex;align-items:center;padding-left: 14px;height:73%;border-right:3px solid rgba(239,246,244,.96);font: italic 900 41px/1 "Noto Sans Display Condensed","Liberation Sans Narrow",sans-serif;white-space:nowrap;text-shadow:1px 3px 2px #001013;transform:skewX(11deg);}
-.stat-detail {flex:1;white-space:nowrap;padding-left:29px;font: 500 22px/1.2 "Noto Sans Display Condensed","Liberation Sans Narrow",Arial,sans-serif;letter-spacing:-.15px;transform:skewX(11deg);text-shadow:0 2px 2px #001016;}
+.stat-short {flex:0 0 227px;display:flex;align-items:center;padding-left: 14px;height:73%;border-right:3px solid rgba(239,246,244,.96);font-style:italic;font-weight:900;font-size:41px;line-height:1;white-space:nowrap;text-shadow:1px 3px 2px #001013;transform:skewX(11deg);}
+.stat-detail {flex:1;white-space:nowrap;padding-left:29px;font-weight:500;font-size:22px;line-height:1.2;letter-spacing:-.15px;transform:skewX(11deg);text-shadow:0 2px 2px #001016;}
 .rank-plate {
   align-self:stretch;
   flex:0 0 148px;
@@ -93,14 +92,28 @@ body { display:grid; place-items:center; overflow-x:hidden; }
   }
 /* Metallic gradients apply ONLY to the ranking GLYPHS, not the orange plates. */
 .rank-text {
-  font:italic 1000 49px/1 "Noto Sans Display Condensed",sans-serif;
+  font-style:italic;
+  font-weight:1000;
+  font-size:49px;
+  line-height:1;
   transform:skewX(11deg);
   letter-spacing:-1px;
   display:inline-block;
   -webkit-text-stroke:.85px rgba(49,18,9,.86);
   filter:drop-shadow(0 2px 1px #260d05) drop-shadow(0 0 1px #1c0a05);
   }
-.rank-text,.rank-inline {-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;}
+/* Italic glyphs can extend beyond their advance width. Expand the gradient's
+   paint area on both sides without changing text placement or inline spacing. */
+.rank-text,.rank-inline {
+  padding-inline:.2em;
+  margin-inline:-.2em;
+  white-space:nowrap;
+  background-repeat:no-repeat;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
 .rank-1 {background-image:linear-gradient(180deg,#fffce0 0%,#ffe07d 24%,#b47b11 47%,#fff2b1 62%,#d09318 83%,#ffe98b 100%);}
 .rank-2 {background-image:linear-gradient(180deg,#ffffff 0%,#dee9f2 27%,#8295a7 49%,#f8fdff 64%,#aebfcb 84%,#e9f2f8 100%);}
 .rank-3 {background-image:linear-gradient(180deg,#ffebdf 0%,#e9b3a5 24%,#a76062 47%,#ffe1d1 62%,#c27c77 85%,#fbd3bd 100%);}
@@ -113,9 +126,9 @@ body { display:grid; place-items:center; overflow-x:hidden; }
   box-shadow:0 0 9px #39e4ed,0 3px 14px #fb6519c8,inset 0 0 13px #85f7fd3c;}
 .nameplate-inner{transform:skewX(17deg);display:flex;height:100%;align-items:center;}
 .jersey-number {width:160px;text-align:center;line-height:.89;text-shadow:1px 3px 3px black;}
-.jersey-number .pos {font:italic 850 29px "Noto Sans Display Condensed",sans-serif;display:block;}
-.jersey-number .num {font:italic 950 51px "Noto Sans Display Condensed",sans-serif;display:block;margin-top: -9px;}
-.player-label {flex:1;margin-top:0;padding-left:17px;line-height:.94;font:italic 900 32px "Noto Sans Display Condensed",sans-serif;text-shadow:1px 3px 3px #2a0d02;}
+.jersey-number .pos {font-style:italic;font-weight:850;font-size:29px;line-height:normal;display:block;}
+.jersey-number .num {font-style:italic;font-weight:950;font-size:51px;line-height:normal;display:block;margin-top: -9px;}
+.player-label {flex:1;margin-top:0;padding-left:17px;line-height:normal;font-style:italic;font-weight:900;font-size:32px;text-shadow:1px 3px 3px #2a0d02;}
 .player-label .last-name {display:block;font-size:48px;letter-spacing:0;margin-top: -9px;}
 
 .takeaway {position:absolute;left:25px;top:883px;width:1486px;height:118px;z-index:7;
@@ -124,11 +137,11 @@ body { display:grid; place-items:center; overflow-x:hidden; }
   background:linear-gradient(101deg,rgba(2,44,50,.95),rgba(0,23,29,.97) 58%,rgba(1,43,44,.93) 100%);
   box-shadow:0 0 12px #55eff380,0 0 16px #f06c1590,inset 0 0 19px #10ccd321;display:flex;align-items:center;}
 .takeaway-inner {transform:skewX(13deg);display:flex;align-items:center;width:100%;height:100%;}
-.takeaway-title {width:361px;flex:0 0 361px;text-align:center;padding-left:18px;font:italic 800 34px/1 "Noto Sans Display Condensed",sans-serif;text-shadow:0 3px 4px #02090b;}
+.takeaway-title {width:361px;flex:0 0 361px;text-align:center;padding-left:18px;font-style:italic;font-weight:800;font-size:34px;line-height:1;text-shadow:0 3px 4px #02090b;}
 .takeaway-title .second {font-size:56px;font-weight:1000;color:#06e5e9;letter-spacing:-1.4px;}
-.chevrons{font:900 66px/1 Arial,sans-serif;vertical-align:middle;color:#0adfe5;letter-spacing:-15px;margin:0 25px 0 6px;text-shadow:0 0 10px #02cbd6;}
+.chevrons{font-weight:900;font-size:66px;line-height:1;font-style:normal;vertical-align:middle;color:#0adfe5;letter-spacing:-15px;margin:0 25px 0 6px;text-shadow:0 0 10px #02cbd6;}
 .takeaway-separator{height:81px;width:3px;flex:0 0 3px;background:#e2f8f7;box-shadow:0 0 3px #fff;}
-.takeaway-copy{padding:0 28px;font: italic 500 28px/1.24 "Noto Sans Display Condensed",Arial,sans-serif;letter-spacing:-.4px;}
+.takeaway-copy{padding:0 28px;font-style:italic;font-weight:500;font-size:28px;line-height:1.24;letter-spacing:-.4px;}
 .takeaway-copy strong{font-weight:1000;}
 
 @media (prefers-reduced-motion:reduce) {*,*::before,*::after{animation:none !important;}}
