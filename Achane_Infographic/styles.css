@@ -1,9 +1,9 @@
-/* 1536 × 1024 artboard. script.js fits it to the browser viewport. */
+/* 1536 Ã— 1024 artboard. script.js fits it to the browser viewport. */
 :root { --aqua:#20f0f3; --orange:#fa7414; --white:#f8fcfc; }
 * { box-sizing:border-box; }
 html,body { margin:0; min-height:100%; background:#071114; }
 body { display:grid; place-items:center; overflow-x:hidden; }
-.frame { position:relative; width:1536px; height:1024px; overflow:hidden; }
+.frame {position:relative;width: 1536px !important;height:1024px;overflow:hidden;zoom: 1;}
 .stage {
   position:relative; width:1536px; height:1024px; overflow:hidden;
   transform-origin:top left; isolation:isolate; color:#f8fbfc;
@@ -52,27 +52,54 @@ body { display:grid; place-items:center; overflow-x:hidden; }
 .flag-spark {position:absolute;top:140px;height:3px;z-index:3;background:#ff9b4b;filter:drop-shadow(0 0 9px #ff8023);}
 .spark-left {left:627px;width:78px;}.spark-right{left:1380px;width:106px;}
 
-.stats { position:absolute;left:528px;top:196px;width:982px;z-index:5;display:grid;gap:9px;}
+.stats {position:absolute;left: 526px;top:196px;width:982px;z-index:5;display:grid;gap:9px;}
 .stat-row {height:69px;position:relative;transform:skewX(-11deg);padding:2px;border-radius:17px 16px 17px 15px;
   background:linear-gradient(100deg,#43fcff 0%,#54dbe1 20%,#63f1f0 80%,#ffd278 100%);
   box-shadow:0 0 7px rgba(28,244,247,.59),0 0 18px rgba(14,204,217,.18),inset 0 0 5px #ffffff80; }
 .stat-row::before {content:"";position:absolute;left:16px;right:146px;top:-2px;height:2px;background:linear-gradient(90deg,transparent,#f1ffff 20%,#66fbfd 68%,transparent);opacity:.82;filter:drop-shadow(0 0 4px #7bffff);}
-.stat-inner {display:flex;align-items:center;overflow:hidden;width:100%;height:100%;border-radius:14px;
-  background:linear-gradient(100deg,#05484c 0%,#06282c 17%,#031e22 39%,#00191e 79%,#09282a 100%);}
+.stat-inner {
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  width:100%;
+  height:100%;
+  border-radius:14px;
+  background:linear-gradient(100deg,#05484c 0%,#06282c 17%,#031e22 39%,#00191e 79%,#09282a 100%);
+  }
 .stat-iconbox {position:relative;flex:0 0 110px;height:100%;display:grid;place-items:center;background:linear-gradient(110deg,#00d9df 0%,#00636c 44%,#05252c 100%);border-right:1px solid rgba(88,235,236,.4);}
 .stat-iconbox::before {content:"";position:absolute;left:6px;top:7px;width:82px;height:15px;background:rgba(239,254,255,.3);filter:blur(17px);}
 /* Supplied sports SVGs include padding, so use a larger image box for legible silhouettes. */
-.stat-icon {position:absolute;left:50%;top:50%;width:82px;height:82px;object-fit:contain;transform:translate(-50%,-50%) skewX(11deg);
-  filter:drop-shadow(0 2px 2px #00191e) drop-shadow(0 0 3px rgba(181,255,255,.18));}
-.stat-short {flex:0 0 227px;display:flex;align-items:center;padding-left:26px;height:73%;border-right:3px solid rgba(239,246,244,.96);font:italic 900 44px/1 "Noto Sans Display Condensed","Liberation Sans Narrow",sans-serif;white-space:nowrap;text-shadow:1px 3px 2px #001013;transform:skewX(11deg);}
-.stat-detail {flex:1;white-space:nowrap;padding-left:29px;font:500 26px/1.2 "Noto Sans Display Condensed","Liberation Sans Narrow",Arial,sans-serif;letter-spacing:-.15px;transform:skewX(11deg);text-shadow:0 2px 2px #001016;}
-.rank-plate {align-self:stretch;flex:0 0 148px;display:grid;place-items:center;margin:-2px -2px -2px 0;
-  background:linear-gradient(135deg,#feaa46 0%,#e96717 42%,#ba370a 94%);border-left:2px solid #ffbd62;box-shadow:inset 0 0 9px #f7b25770,0 0 8px #fc6d20;}
+.stat-icon {
+  position:absolute;
+  left:50%;
+  top: 48%;
+  width: 86px;
+  height: 86px;
+  object-fit:contain;
+  transform:translate(-50%,-50%) skewX(11deg);
+  filter:drop-shadow(0 2px 2px #00191e) drop-shadow(0 0 3px rgba(181,255,255,.18));
+  }
+.stat-short {flex:0 0 227px;display:flex;align-items:center;padding-left: 14px;height:73%;border-right:3px solid rgba(239,246,244,.96);font: italic 900 41px/1 "Noto Sans Display Condensed","Liberation Sans Narrow",sans-serif;white-space:nowrap;text-shadow:1px 3px 2px #001013;transform:skewX(11deg);}
+.stat-detail {flex:1;white-space:nowrap;padding-left:29px;font: 500 22px/1.2 "Noto Sans Display Condensed","Liberation Sans Narrow",Arial,sans-serif;letter-spacing:-.15px;transform:skewX(11deg);text-shadow:0 2px 2px #001016;}
+.rank-plate {
+  align-self:stretch;
+  flex:0 0 148px;
+  display:grid;
+  place-items:center;
+  margin:-2px -2px -2px 0;
+  background:linear-gradient(135deg,#feaa46 0%,#e96717 42%,#ba370a 94%);
+  border-left:2px solid #ffbd62;
+  box-shadow:inset 0 0 9px #f7b25770,0 0 8px #fc6d20;
+  }
 /* Metallic gradients apply ONLY to the ranking GLYPHS, not the orange plates. */
-.rank-text {font:italic 1000 49px/1 "Noto Sans Display Condensed",sans-serif;transform:skewX(11deg);
-  letter-spacing:-1px;display:inline-block;
+.rank-text {
+  font:italic 1000 49px/1 "Noto Sans Display Condensed",sans-serif;
+  transform:skewX(11deg);
+  letter-spacing:-1px;
+  display:inline-block;
   -webkit-text-stroke:.85px rgba(49,18,9,.86);
-  filter:drop-shadow(0 2px 1px #260d05) drop-shadow(0 0 1px #1c0a05);}
+  filter:drop-shadow(0 2px 1px #260d05) drop-shadow(0 0 1px #1c0a05);
+  }
 .rank-text,.rank-inline {-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;}
 .rank-1 {background-image:linear-gradient(180deg,#fffce0 0%,#ffe07d 24%,#b47b11 47%,#fff2b1 62%,#d09318 83%,#ffe98b 100%);}
 .rank-2 {background-image:linear-gradient(180deg,#ffffff 0%,#dee9f2 27%,#8295a7 49%,#f8fdff 64%,#aebfcb 84%,#e9f2f8 100%);}
@@ -87,9 +114,9 @@ body { display:grid; place-items:center; overflow-x:hidden; }
 .nameplate-inner{transform:skewX(17deg);display:flex;height:100%;align-items:center;}
 .jersey-number {width:160px;text-align:center;line-height:.89;text-shadow:1px 3px 3px black;}
 .jersey-number .pos {font:italic 850 29px "Noto Sans Display Condensed",sans-serif;display:block;}
-.jersey-number .num {font:italic 950 51px "Noto Sans Display Condensed",sans-serif;display:block;}
+.jersey-number .num {font:italic 950 51px "Noto Sans Display Condensed",sans-serif;display:block;margin-top: -9px;}
 .player-label {flex:1;margin-top:0;padding-left:17px;line-height:.94;font:italic 900 32px "Noto Sans Display Condensed",sans-serif;text-shadow:1px 3px 3px #2a0d02;}
-.player-label .last-name {display:block;font-size:48px;letter-spacing:0;}
+.player-label .last-name {display:block;font-size:48px;letter-spacing:0;margin-top: -9px;}
 
 .takeaway {position:absolute;left:25px;top:883px;width:1486px;height:118px;z-index:7;
   transform:skewX(-13deg);border:2px solid #72faff;border-left:3px solid #ff781b;border-bottom-color:#ff7e20;
@@ -101,7 +128,7 @@ body { display:grid; place-items:center; overflow-x:hidden; }
 .takeaway-title .second {font-size:56px;font-weight:1000;color:#06e5e9;letter-spacing:-1.4px;}
 .chevrons{font:900 66px/1 Arial,sans-serif;vertical-align:middle;color:#0adfe5;letter-spacing:-15px;margin:0 25px 0 6px;text-shadow:0 0 10px #02cbd6;}
 .takeaway-separator{height:81px;width:3px;flex:0 0 3px;background:#e2f8f7;box-shadow:0 0 3px #fff;}
-.takeaway-copy{padding:0 28px;font:italic 500 29px/1.24 "Noto Sans Display Condensed",Arial,sans-serif;letter-spacing:-.4px;}
+.takeaway-copy{padding:0 28px;font: italic 500 28px/1.24 "Noto Sans Display Condensed",Arial,sans-serif;letter-spacing:-.4px;}
 .takeaway-copy strong{font-weight:1000;}
 
 @media (prefers-reduced-motion:reduce) {*,*::before,*::after{animation:none !important;}}
