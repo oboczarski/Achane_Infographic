@@ -2,13 +2,25 @@
 
 ## Edit
 
-- Stat abbreviations, descriptions, and ranking numbers: `const stats` near the end of `index.html`.
-- Ranking text gradients: `.rank-1` (gold), `.rank-2` (silver), `.rank-3` (rose gold), and `.rank-4, .rank-5` (bronze). These are CSS `background-clip: text` gradients, not colors baked into images.
-- All eight stat icons: change the `icon` values in `stats` to a name available in the `paths` object.
-- Player name/title, subtitle, footer copy: editable HTML above `const stats`.
-- Colors and layout: CSS near the top of `index.html`; common brand colors are declared in `:root`.
+- Page structure, player name/title, subtitle, and footer copy: `index.html`.
+- Colors, layout, and ranking text gradients: `styles.css`; common brand colors are declared in `:root`. `.rank-1` is gold, `.rank-2` is silver, `.rank-3` is rose gold, and `.rank-4, .rank-5` are bronze. These are CSS `background-clip: text` gradients, not colors baked into images.
+- Stat abbreviations, descriptions, ranking numbers, and icon filenames: `const stats` in `script.js`.
+- Artboard scaling and stat-row rendering: `script.js`, loaded with `defer` after the HTML is parsed.
 - Images: `assets/achane-cutout.png` and `assets/dolphins-logo.png`.
-- Icons: professional **Material Design Icons** (Pictogrammers v7.4.47), converted to standalone inline SVG paths in the editable `paths` map. These are embedded vectors, so no network connection, icon font, or CDN is needed.
+- Icons: local SVG files in `assets/Sports_Icons_SVG/`, used in numbered order from top to bottom. No icon font or CDN is needed.
+
+| Row | Stat | SVG file |
+| --- | --- | --- |
+| 1 | YPC | `01_Cleat.svg` |
+| 2 | MTF/A | `02_Tackle.svg` |
+| 3 | YCO/A | `03_Strength.svg` |
+| 4 | EXPLSV% | `04_Speed.svg` |
+| 5 | RYOE | `05_Statistics.svg` |
+| 6 | TGT | `06_Accuracy.svg` |
+| 7 | TS% | `07_Analytics.svg` |
+| 8 | recYDS | `08_Receptions.svg` |
+
+Open `index.html` in a browser to view the infographic. Keep `styles.css`, `script.js`, and the `assets/` directory alongside it so local references resolve.
 
 ## Assets
 
@@ -16,4 +28,4 @@
 - `dolphins-logo.png` was isolated from the **reference infographic the user uploaded**.
 - `grain.png` is generated visual texture.
 
-`make_assets.py` recreates the PNG assets from the two original JPEG files included in `sources/`; the generated PNGs are already included. `build_standalone.py` regenerates a single-file HTML deliverable. Any logo/trademark rights remain with their owners.
+Any logo/trademark rights remain with their owners.
