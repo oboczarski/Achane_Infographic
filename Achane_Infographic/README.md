@@ -1,11 +1,5 @@
 # De'Von Achane — 2025 rankings infographic
 
-A code-driven recreation of the supplied 1536 × 1024 infographic. **The original infographic isn't embedded as a background.** All headings, descriptions, rankings, labels, panels, and decorative effects are HTML/CSS/SVG.
-
-## Open
-
-Open `index.html` or `standalone.html` in a modern browser. `standalone.html` has all assets embedded in one file. Everything is local; no network or build step is needed. The artboard scales to fit a smaller window and retains the 3:2 design.
-
 ## Edit
 
 - Stat abbreviations, descriptions, and ranking numbers: `const stats` near the end of `index.html`.
