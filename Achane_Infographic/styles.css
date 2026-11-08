@@ -36,7 +36,7 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
 .streak-br {right:-202px;bottom:61px;transform:rotate(-52deg);opacity:.65;}
 .lightline {position:absolute;pointer-events:none;z-index: 3;height:3px;background:linear-gradient(90deg,transparent,var(--aqua),white,var(--orange),transparent);filter:drop-shadow(0 0 9px var(--aqua));opacity:.65;}
 .lightline.line-a {width:1000px;left:470px;top: 867px;}
-.lightline.line-b {width:720px;left:694px;top:164px;opacity:.35;}
+.lightline.line-b {width: 1130px;left: 494px;top: 9px;opacity: 0.2;height: 106px;}
 
 /* Player photo is a transparent PNG derived from the supplied head-to-torso image. */
 .player {
@@ -53,9 +53,9 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
 /* The logo is extracted as a separate visual asset, not part of the backdrop. */
 .team-logo {
   position:absolute;
-  left: 402px;
+  left: 403px;
   top:1px;
-  width:197px;
+  width: 195px;
   height:176px;
   object-fit:contain;
   z-index:4;
@@ -63,7 +63,7 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
   }
 .headline {
   position:absolute;
-  left: 597px;
+  left: 596px;
   top: 10px;
   z-index:4;
   margin:0;
@@ -79,16 +79,16 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
   font-family: 'Bruno Ace SC';
   -webkit-text-stroke: 4px;
   }
-.headline .name-first-A {color:#fafafa;}
-.name-first-B {color:#fafafa;margin-left: 0;text-shadow: 0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);}
+.headline .name-first-A {color:#fafafa;letter-spacing: -5px;text-shadow: 0 5px 0 rgba(0, 0, 0, .8), 8px 8px 8px rgba(0, 0, 0, .8);}
+.name-first-B {color: #fafafa;margin-left: 1px;text-shadow: 0 5px 0 rgba(0,0,0,.8),8px 9px 6px rgba(0,0,0,.8);letter-spacing: -5px;}
 
-.headline .name-last-A {color:#25ebed;margin-left: 26px;text-shadow: 0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);letter-spacing: -3.7px;}
+.headline .name-last-A {color:#25ebed;margin-left: 26px;text-shadow: 0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);letter-spacing: -4.9px;margin-right: 1.3px;}
 .name-last-B {color:#25ebed;margin-left: 0;text-shadow: 0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);letter-spacing: -7px;}
 .name-last-C {color:#25ebed;margin-left: 0;text-shadow: 0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);letter-spacing: -8px;}
 .headline-rule {position:absolute;left:643px;top:112px;width:845px;height:3px;background:linear-gradient(90deg,transparent,#d6e0e0 18%,#12e7e7 87%,transparent);z-index:3;opacity:.9;filter:drop-shadow(0 0 4px #cfffff);}
 .season-flag {
   position:absolute;
-  left:721px;
+  left: 714px;
   top: 124px;
   width:646px;
   height:55px;
@@ -114,9 +114,9 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
   -webkit-text-stroke: 1px #fff;
   }
 .flag-spark {position:absolute;top: 150px;height:3px;z-index:3;background: #fc4305;filter:drop-shadow(0 0 9px #ff8023);}
-.spark-left {left:627px;width:78px;}.spark-right{left:1380px;width:106px;}
+.spark-left {left: 592px;width: 106px;}.spark-right{left: 1375px;width:106px;}
 
-.stats {position:absolute;left: 540px;top: 191px;width: 954px;z-index:5;display:grid;gap: 14px;}
+.stats {position:absolute;left: 547px;top: 191px;width: 954px;z-index:5;display:grid;gap: 14px;}
 .stat-row {
   height: 71px;
   position:relative;
@@ -141,19 +141,19 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
 /* Supplied sports SVGs include padding, so use a larger image box for legible silhouettes. */
 .stat-icon {
   position:absolute;
-  left:50%;
+  left: 47%;
   top: 48%;
-  width: 86px;
-  height: 86px;
+  width: 99px;
+  height: 99px;
   object-fit:contain;
   transform:translate(-50%,-50%) skewX(11deg);
   filter:drop-shadow(0 2px 2px #00191e) drop-shadow(0 0 3px rgba(181,255,255,.18));
   }
 .stat-short {flex:0 0 227px;display:flex;align-items:center;padding-left: 9px;height:73%;border-right:3px solid rgba(239,246,244,.96);font-style:italic;font-weight: 800;font-size: 34px;line-height:1;white-space:nowrap;text-shadow:1px 3px 2px #001013;transform:skewX(11deg);font-family: 'Bruno Ace SC';letter-spacing: 0px;-webkit-text-stroke: 2px;}
-.stat-detail {flex:1;padding-left: 17px;font-weight: 300;font-size: 25px;line-height: 1;letter-spacing: 0;transform:skewX(11deg);text-shadow: none;font-family: 'Google Sans flex';font-variation-settings: "wdth" 100;}
+.stat-detail {flex:1;padding-left: 19px;font-weight: 300;font-size: 25px;line-height: 1;letter-spacing: 0;transform:skewX(11deg);text-shadow: none;font-family: 'Google Sans flex';font-variation-settings: "wdth" 100;}
 .rank-plate {
   align-self:stretch;
-  flex:0 0 148px;
+  flex: 0 0 168px;
   display:grid;
   place-items:center;
   margin:-2px -2px -2px 0;
@@ -163,14 +163,15 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
   }
 /* Metallic gradients apply ONLY to the ranking GLYPHS, not the orange plates. */
 .rank-text {
-  font-weight: 600;
-  font-size: 59px;
+  font-weight: 800;
+  font-size: 51px;
   line-height:1;
   transform:skewX(11deg);
-  letter-spacing: -3px;
+  letter-spacing: 0px;
   display:inline-block;
   filter:drop-shadow(0 2px 1px #260d05) drop-shadow(0 0 1px #1c0a05);
-  font-family: 'MuseoModerno';
+  font-family: 'Bruno Ace SC';
+  -webkit-text-stroke: 3px;
   }
 /* Italic glyphs can extend beyond their advance width. Expand the gradient's
    paint area on both sides without changing text placement or inline spacing. */
@@ -234,7 +235,7 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
 .takeaway-title .second {font-size:56px;font-weight:1000;color:#06e5e9;letter-spacing:-1.4px;}
 .chevrons{font-weight:900;font-size:66px;line-height:1;font-style:normal;vertical-align:middle;color:#0adfe5;letter-spacing:-15px;margin:0 25px 0 6px;text-shadow:0 0 10px #02cbd6;}
 .takeaway-separator{height:81px;width:3px;flex:0 0 3px;background:#e2f8f7;box-shadow:0 0 3px #fff;}
-.takeaway-copy{padding:0 28px;font-weight: 200;font-size: 28px;line-height: 1.1;letter-spacing: -0.5px;font-family: 'Google Sans flex';font-variation-settings: "wdth" 105,
+.takeaway-copy{padding:0 28px;font-weight: 200;font-size: 27px;line-height: 1.125;letter-spacing: -0.5px;font-family: 'Google Sans flex';font-variation-settings: "wdth" 105,
 "slnt" 0;}
 .takeaway-copy strong{font-weight: 600;}
 
