@@ -79,8 +79,12 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
   font-family: 'Bruno Ace SC';
   -webkit-text-stroke: 4px;
   }
-.headline .name-first {color:#fafafa;}
-.headline .name-last {color:#25ebed;margin-left: 26px;text-shadow:0 5px 0 rgba(0,0,0,.7),0 0 16px rgba(11,242,237,.19);}
+.headline .name-first-A {color:#fafafa;}
+.name-first-B {color:#fafafa;margin-left: 0;text-shadow: 0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);}
+
+.headline .name-last-A {color:#25ebed;margin-left: 26px;text-shadow: 0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);letter-spacing: -3.7px;}
+.name-last-B {color:#25ebed;margin-left: 0;text-shadow: 0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);letter-spacing: -7px;}
+.name-last-C {color:#25ebed;margin-left: 0;text-shadow: 0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);letter-spacing: -8px;}
 .headline-rule {position:absolute;left:643px;top:112px;width:845px;height:3px;background:linear-gradient(90deg,transparent,#d6e0e0 18%,#12e7e7 87%,transparent);z-index:3;opacity:.9;filter:drop-shadow(0 0 4px #cfffff);}
 .season-flag {
   position:absolute;
