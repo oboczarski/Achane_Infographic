@@ -1,0 +1,241 @@
+/* 1536 Ã— 1024 artboard. script.js fits it to the browser viewport. */
+:root { --aqua:#20f0f3; --orange:#fa7414; --white:#f8fcfc; --font-family:"Google Sans Flex",Arial,sans-serif; }
+* { box-sizing:border-box; }
+html,body { margin:0; min-height:100%; background:#071114; }
+body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--font-family); font-optical-sizing:auto; font-stretch:condensed; }
+.frame {position:relative;width: 1536px !important;height:1024px;overflow:hidden;zoom: 1;}
+.stage {
+  position:relative;
+  width:1536px;
+  height:1024px;
+  overflow:hidden;
+  transform-origin:top left;
+  isolation:isolate;
+  color:#f8fbfc;
+  background:
+    radial-gradient(ellipse at 36% 34%, rgba(24,194,209,.18) 0%, transparent 33%),
+    radial-gradient(ellipse at 86% 75%, rgba(4,147,157,.12),transparent 34%),
+    radial-gradient(ellipse at 8% 98%, rgba(249,105,14,.19),transparent 34%),
+    linear-gradient(122deg,#080e14 1%,#092d32 34%,#03181d 65%,#020d12 100%);
+  margin: 4px;
+}
+.stage::before { content:""; position:absolute; inset:0; background:url("assets/grain.png") repeat; opacity:.28; pointer-events:none; z-index:10; mix-blend-mode:screen; }
+.stage::after { content:""; position:absolute; inset:0; pointer-events:none; z-index:9;
+  box-shadow: inset 0 0 75px rgba(1,4,8,.67), inset 0 0 16px rgba(1,8,12,.85); }
+.haze {
+  position:absolute;
+  inset:-20px;
+  background:
+  radial-gradient(ellipse at 44% 53%,rgba(10,225,224,.1),transparent 28%),
+  radial-gradient(ellipse at 90% 6%,rgba(0,221,227,.09),transparent 28%);
+  z-index:0;
+  }
+.corner-streak {position:absolute; width:480px; height:46px; transform:rotate(-49deg);z-index:1; pointer-events:none;}
+.corner-streak::before {content:"";position:absolute;inset:0;border-top:4px solid var(--orange);border-bottom:3px solid var(--aqua);background:linear-gradient(180deg,transparent 20%,rgba(12,240,231,.23) 60%,transparent 100%);box-shadow:0 0 20px var(--aqua),0 0 17px var(--orange);}
+.streak-tl {left:-169px;top:5px;}
+.streak-br {right:-202px;bottom:61px;transform:rotate(-52deg);opacity:.65;}
+.lightline {position:absolute;pointer-events:none;z-index: 3;height:3px;background:linear-gradient(90deg,transparent,var(--aqua),white,var(--orange),transparent);filter:drop-shadow(0 0 9px var(--aqua));opacity:.65;}
+.lightline.line-a {width:1000px;left:470px;top: 867px;}
+.lightline.line-b {width:720px;left:694px;top:164px;opacity:.35;}
+
+/* Player photo is a transparent PNG derived from the supplied head-to-torso image. */
+.player {
+  position:absolute;
+  left: -156px;
+  top: 22px;
+  width: 800px;
+  height:auto;
+  z-index:2;
+  filter: drop-shadow(0px 0px 5px #0ff8) drop-shadow(0px 0px 23px #4ffa) drop-shadow(24px 6px 17px rgba(0,0,0,.57)) drop-shadow(3px 0 13px rgba(21,218,228,.11));
+  }
+.photo-fade {position:absolute;left: 275px;top: -10px;width: 430px;height: 962px;z-index: 2;pointer-events:none;background: linear-gradient(90deg, transparent 0%, rgba(1, 25, 31, 0.15) 30%, rgba(0, 0, 0, .99) 68%, rgb(15 88 93 / 92%) 120%);}
+
+/* The logo is extracted as a separate visual asset, not part of the backdrop. */
+.team-logo {
+  position:absolute;
+  left: 402px;
+  top:1px;
+  width:197px;
+  height:176px;
+  object-fit:contain;
+  z-index:4;
+  filter:drop-shadow(0 5px 8px rgba(0,0,0,.72));
+  }
+.headline {
+  position:absolute;
+  left: 597px;
+  top: 10px;
+  z-index:4;
+  margin:0;
+  white-space:nowrap;
+  font-size: 97px;
+  font-weight: 800;
+  font-style:italic;
+  letter-spacing: -4px;
+  line-height:1;
+  transform:scaleX(.94);
+  transform-origin:left top;
+  text-shadow:0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);
+  font-family: 'Bruno Ace SC';
+  -webkit-text-stroke: 4px;
+  }
+.headline .name-first-A {color:#fafafa;}
+.name-first-B {color:#fafafa;margin-left: 0;text-shadow: 0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);}
+
+.headline .name-last-A {color:#25ebed;margin-left: 26px;text-shadow: 0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);letter-spacing: -3.7px;}
+.name-last-B {color:#25ebed;margin-left: 0;text-shadow: 0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);letter-spacing: -7px;}
+.name-last-C {color:#25ebed;margin-left: 0;text-shadow: 0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);letter-spacing: -8px;}
+.headline-rule {position:absolute;left:643px;top:112px;width:845px;height:3px;background:linear-gradient(90deg,transparent,#d6e0e0 18%,#12e7e7 87%,transparent);z-index:3;opacity:.9;filter:drop-shadow(0 0 4px #cfffff);}
+.season-flag {
+  position:absolute;
+  left:721px;
+  top: 124px;
+  width:646px;
+  height:55px;
+  z-index:4;
+  transform:skewX(-13deg);
+  background: linear-gradient(180deg, #01758e 0%, #028aa3 45%, #038098 100%);
+  border: 3px solid #f53e06;
+  box-shadow:inset 0 2px 11px rgba(253,155,38,.28),0 0 15px rgba(255,108,10,.32),0 4px 9px #000a;
+  border-radius: 10px;
+  }
+.season-flag span {
+  display:block;
+  text-align:center;
+  transform:skewX(13deg);
+  color:#fcf7f1;
+  font-size:39px;
+  font-style:italic;
+  font-weight: 800;
+  line-height:47px;
+  letter-spacing: 2px;
+  text-shadow: 1px 3px 1px #0008;
+  font-family: 'Bruno Ace SC';
+  -webkit-text-stroke: 1px #fff;
+  }
+.flag-spark {position:absolute;top: 150px;height:3px;z-index:3;background: #fc4305;filter:drop-shadow(0 0 9px #ff8023);}
+.spark-left {left:627px;width:78px;}.spark-right{left:1380px;width:106px;}
+
+.stats {position:absolute;left: 540px;top: 191px;width: 954px;z-index:5;display:grid;gap: 14px;}
+.stat-row {
+  height: 71px;
+  position:relative;
+  transform:skewX(-11deg);
+  padding:2px;
+  border-radius:17px 16px 17px 15px;
+  background:linear-gradient(100deg,#43fcff 0%,#54dbe1 20%,#63f1f0 80%,#ffd278 100%);
+  box-shadow:0 0 7px rgba(28,244,247,.59),0 0 18px rgba(14,204,217,.18),inset 0 0 5px #ffffff80;
+  }
+.stat-row::before {content:"";position:absolute;left:16px;right:146px;top:-2px;height:2px;background:linear-gradient(90deg,transparent,#f1ffff 20%,#66fbfd 68%,transparent);opacity:.82;filter:drop-shadow(0 0 4px #7bffff);}
+.stat-inner {
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  width:100%;
+  height:100%;
+  border-radius:14px;
+  background:linear-gradient(100deg,#05484c 0%,#06282c 17%,#031e22 39%,#00191e 79%,#09282a 100%);
+  }
+.stat-iconbox {position:relative;flex:0 0 110px;height:100%;display:grid;place-items:center;background:linear-gradient(110deg,#00d9df 0%,#00636c 44%,#05252c 100%);border-right:1px solid rgba(88,235,236,.4);}
+.stat-iconbox::before {content:"";position:absolute;left:6px;top:7px;width:82px;height:15px;background:rgba(239,254,255,.3);filter:blur(17px);}
+/* Supplied sports SVGs include padding, so use a larger image box for legible silhouettes. */
+.stat-icon {
+  position:absolute;
+  left:50%;
+  top: 48%;
+  width: 86px;
+  height: 86px;
+  object-fit:contain;
+  transform:translate(-50%,-50%) skewX(11deg);
+  filter:drop-shadow(0 2px 2px #00191e) drop-shadow(0 0 3px rgba(181,255,255,.18));
+  }
+.stat-short {flex:0 0 227px;display:flex;align-items:center;padding-left: 9px;height:73%;border-right:3px solid rgba(239,246,244,.96);font-style:italic;font-weight: 800;font-size: 34px;line-height:1;white-space:nowrap;text-shadow:1px 3px 2px #001013;transform:skewX(11deg);font-family: 'Bruno Ace SC';letter-spacing: 0px;-webkit-text-stroke: 2px;}
+.stat-detail {flex:1;padding-left: 17px;font-weight: 300;font-size: 25px;line-height: 1;letter-spacing: 0;transform:skewX(11deg);text-shadow: none;font-family: 'Google Sans flex';font-variation-settings: "wdth" 100;}
+.rank-plate {
+  align-self:stretch;
+  flex:0 0 148px;
+  display:grid;
+  place-items:center;
+  margin:-2px -2px -2px 0;
+  background: transparent;
+  border-left: 2px solid #d0b472;
+  box-shadow: inset 0 0 9px #fff8, 0 0 8px #13b7be;
+  }
+/* Metallic gradients apply ONLY to the ranking GLYPHS, not the orange plates. */
+.rank-text {
+  font-weight: 600;
+  font-size: 59px;
+  line-height:1;
+  transform:skewX(11deg);
+  letter-spacing: -3px;
+  display:inline-block;
+  filter:drop-shadow(0 2px 1px #260d05) drop-shadow(0 0 1px #1c0a05);
+  font-family: 'MuseoModerno';
+  }
+/* Italic glyphs can extend beyond their advance width. Expand the gradient's
+   paint area on both sides without changing text placement or inline spacing. */
+.rank-text,.rank-inline {
+  padding-inline:.2em;
+  margin-inline:-.2em;
+  white-space:nowrap;
+  background-repeat:no-repeat;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+.rank-1 {background-image: linear-gradient(180deg, #fffce0 0%, #e3c976 24%, #fff3be 47%, #fef5c6 62%, #e0be7a 83%, #b47b11 100%);filter: brightness(1.1) drop-shadow(0 2px 1px #000) drop-shadow(0 0 1px #000);}
+.rank-2 {background-image: linear-gradient(180deg, #7995a8 0%, #c5d9e7 49%, #b1d2df 64%, #7995a8 84%, #8295a7 100%);filter: brightness(1.2) drop-shadow(0 2px 1px #000) drop-shadow(0 0 1px #000);}
+.rank-3 {background-image: linear-gradient(180deg, #5396bc 0%, #d1eeff 59%, #4185ac 100%);}
+.rank-4,.rank-5 {background-image: linear-gradient(180deg, #C58B93 0%, #e7d1c7 47%, #ffe1d1 62%, #C58B93 100%);filter: brightness(1) saturate(0.8) drop-shadow(0 2px 1px #000);}
+.rank-inline {font-weight:1000;display:inline-block;filter:drop-shadow(0 1px 1px #030e10);}
+
+.nameplate {
+  position:absolute;
+  z-index:6;
+  left: 58px;
+  top:774px;
+  width: 406px;
+  height:96px;
+  transform: skewX(-13deg);
+  border:2px solid #68f9fd;
+  border-bottom-color:#ffad3e;
+  border-right-color:#ff9a26;
+  border-radius:15px 8px 10px 9px;
+  background: linear-gradient(96deg,#023f44 0%,#065459 38%,#923311 38%,#ed6c12 100%);
+  box-shadow:0 0 9px #39e4ed,0 3px 14px #fb6519c8,inset 0 0 13px #85f7fd3c;
+  }
+.nameplate-inner{transform:skewX(17deg);display:flex;height:100%;align-items:center;}
+.jersey-number {width: 126px;text-align:center;line-height:.89;text-shadow:1px 3px 3px black;margin-top: 8px;}
+.jersey-number .pos {font-style:italic;font-weight:850;font-size:29px;line-height:normal;display:block;}
+.jersey-number .num {font-style:italic;font-weight:950;font-size:51px;line-height:normal;display:block;margin-top: -9px;}
+.player-label {flex:1;margin-top: 3px;padding-left: 56px;line-height:normal;font-style:italic;font-weight:900;font-size:32px;text-shadow:1px 3px 3px #2a0d02;}
+.player-label .last-name {display:block;font-size:48px;letter-spacing:0;margin-top: -9px;}
+
+.takeaway {
+  position:absolute;
+  left:25px;
+  top: 879px;
+  width:1486px;
+  height:118px;
+  z-index:7;
+  transform:skewX(-13deg);
+  border:2px solid #72faff;
+  border-left:3px solid #ff781b;
+  border-bottom-color:#ff7e20;
+  border-radius:20px 22px 17px 20px;
+  background:linear-gradient(101deg,rgba(2,44,50,.95),rgba(0,23,29,.97) 58%,rgba(1,43,44,.93) 100%);
+  box-shadow:0 0 12px #55eff380,0 0 16px #f06c1590,inset 0 0 19px #10ccd321;
+  display:flex;
+  align-items:center;
+  }
+.takeaway-inner {transform:skewX(13deg);display:flex;align-items:center;width:100%;height:100%;}
+.takeaway-title {width:361px;flex:0 0 361px;text-align:center;padding: 16px 0 0 18px;font-style:italic;font-weight:800;font-size:34px;line-height:1;text-shadow:0 3px 4px #02090b;}
+.takeaway-title .second {font-size:56px;font-weight:1000;color:#06e5e9;letter-spacing:-1.4px;}
+.chevrons{font-weight:900;font-size:66px;line-height:1;font-style:normal;vertical-align:middle;color:#0adfe5;letter-spacing:-15px;margin:0 25px 0 6px;text-shadow:0 0 10px #02cbd6;}
+.takeaway-separator{height:81px;width:3px;flex:0 0 3px;background:#e2f8f7;box-shadow:0 0 3px #fff;}
+.takeaway-copy{padding:0 28px;font-weight: 200;font-size: 28px;line-height: 1.1;letter-spacing: -0.5px;font-family: 'Google Sans flex';font-variation-settings: "wdth" 105,
+"slnt" 0;}
+.takeaway-copy strong{font-weight: 600;}
+
+@media (prefers-reduced-motion:reduce) {*,*::before,*::after{animation:none !important;}}
