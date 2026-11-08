@@ -149,8 +149,8 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
   transform:translate(-50%,-50%) skewX(11deg);
   filter:drop-shadow(0 2px 2px #00191e) drop-shadow(0 0 3px rgba(181,255,255,.18));
   }
-.stat-short {flex:0 0 227px;display:flex;align-items:center;padding-left: 20px;height:73%;border-right:3px solid rgba(239,246,244,.96);font-style:italic;font-weight: 800;font-size: 34px;line-height:1;white-space:nowrap;text-shadow:1px 3px 2px #001013;transform:skewX(11deg);font-family: 'Bruno Ace SC';letter-spacing: 0px;-webkit-text-stroke: 2px;}
-.stat-short--explosive {padding-left:10px;}
+.stat-short {flex: 0 0 235px;display:flex;align-items:center;padding-left: 21px;height:73%;border-right:3px solid rgba(239,246,244,.96);font-style:italic;font-weight: 800;font-size: 34px;line-height:1;white-space:nowrap;text-shadow:1px 3px 2px #001013;transform:skewX(11deg);font-family: 'Bruno Ace SC';letter-spacing: 1px;-webkit-text-stroke: 2.5px;}
+.stat-short--explosive {padding-left: 11px;letter-spacing: 0px;}
 .stat-detail {flex:1;padding-left: 17px;padding-right: 16px;font-weight: 300;font-size: 25px;line-height: 1;letter-spacing: 0;transform:skewX(11deg);text-shadow: none;font-family: 'Google Sans flex';font-variation-settings: "wdth" 100;}
 .rank-plate {
   align-self:stretch;
@@ -168,19 +168,19 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
   font-size: 51px;
   line-height:1;
   transform:skewX(11deg);
-  letter-spacing: 0px;
+  letter-spacing: -1.3px;
   display:inline-block;
   filter:drop-shadow(0 2px 1px #260d05) drop-shadow(0 0 1px #1c0a05);
   font-family: 'Bruno Ace SC';
   -webkit-text-stroke: 3px;
   justify-self: flex-start;
   }
-.rank-text.rank-1 .rank-number {margin-left: 7px;}
+.rank-text.rank-1 .rank-number {margin-left: 9.5px;font-size: 52px;-webkit-text-stroke: 5px;}
 /* Italic glyphs can extend beyond their advance width. Expand the gradient's
    paint area on both sides without changing text placement or inline spacing. */
 .rank-text,.rank-inline {
   padding-inline:.2em;
-  margin-inline: 0.15em;
+  margin-inline: 0.15em 0em;
   white-space:nowrap;
   background-repeat:no-repeat;
   -webkit-background-clip:text;
@@ -188,10 +188,11 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
   color:transparent;
   -webkit-text-fill-color:transparent;
 }
-.rank-1 {background-image: linear-gradient(180deg, #fffce0 0%, #e3c976 24%, #fff3be 47%, #fef5c6 62%, #e0be7a 83%, #b47b11 100%);filter: brightness(1.1) drop-shadow(0 2px 1px #000) drop-shadow(0 0 1px #000);}
-.rank-2 {background-image: linear-gradient(180deg, #7995a8 0%, #c5d9e7 49%, #b1d2df 64%, #7995a8 84%, #8295a7 100%);filter: brightness(1.2) drop-shadow(0 2px 1px #000) drop-shadow(0 0 1px #000);}
-.rank-3 {background-image: linear-gradient(180deg, #5396bc 0%, #d1eeff 59%, #4185ac 100%);}
-.rank-4,.rank-5 {background-image: linear-gradient(180deg, #C58B93 0%, #e7d1c7 47%, #ffe1d1 62%, #C58B93 100%);filter: brightness(1) saturate(0.8) drop-shadow(0 2px 1px #000);letter-spacing: -4px;}
+.rank-1 {background-image: linear-gradient(180deg, #fffce0 0%, #e3c976 24%, #fff3be 47%, #fef5c6 62%, #e0be7a 83%, #b47b11 100%);filter: brightness(1.1) drop-shadow(0 2px 1px #000) drop-shadow(0 0 1px #000) saturate(0.8);}
+.rank-2 {background-image: linear-gradient(180deg, #7995a8 0%, #c5d9e7 49%, #b1d2df 64%, #7995a8 84%, #8295a7 100%);filter: brightness(1.2) drop-shadow(0 2px 1px #000) drop-shadow(0 0 1px #000);letter-spacing: -1px;}
+.rank-3 {background-image: linear-gradient(180deg, #5396bc 0%, #d1eeff 59%, #4185ac 100%);letter-spacing: -0.8px;}
+.rank-4 {background-image: linear-gradient(180deg, #C58B93 0%, #e7d1c7 47%, #ffe1d1 62%, #C58B93 100%);filter: brightness(1) saturate(0.8) drop-shadow(0 2px 1px #000);letter-spacing: -2px;}
+.rank-5 {background-image: linear-gradient(180deg, #C58B93 0%, #e7d1c7 47%, #ffe1d1 62%, #C58B93 100%);filter: brightness(1) saturate(0.8) drop-shadow(0 2px 1px #000);letter-spacing: -1px;}
 .rank-inline {font-weight:1000;display:inline-block;filter:drop-shadow(0 1px 1px #030e10);}
 
 .nameplate {
