@@ -18,9 +18,9 @@ document.getElementById('stats').innerHTML = stats.map(({metric,description,rank
   <article class="stat-row" aria-label="${escapeHTML(metric)}: ${escapeHTML(rank)}">
     <div class="stat-inner">
       <div class="stat-iconbox"><img class="stat-icon" src="assets/Sports_Icons_SVG/${escapeHTML(icon)}" alt="" aria-hidden="true" /></div>
-      <div class="stat-short">${escapeHTML(metric)}</div>
+      <div class="stat-short${metric === 'EXPLSV%' ? ' stat-short--explosive' : ''}">${escapeHTML(metric)}</div>
       <div class="stat-detail">${escapeHTML(description)}</div>
-      <div class="rank-plate"><span class="rank-text rank-${Number(rank.replace('RB','')) || 1}">${escapeHTML(rank)}</span></div>
+      <div class="rank-plate"><span class="rank-text rank-${Number(rank.replace('RB','')) || 1}">${rank === 'RB1' ? 'RB<span class="rank-number">1</span>' : escapeHTML(rank)}</span></div>
     </div>
   </article>
 `).join('');
