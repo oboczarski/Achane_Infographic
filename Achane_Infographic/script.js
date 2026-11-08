@@ -2,15 +2,15 @@
 // All labels and ranking numbers are regular browser text, not baked into an image.
 // SVG filenames follow the row order from 01 at the top to 08 at the bottom.
 const stats = [
-  {metric:'YPC',     description:'Rushing yards per attempt',                       rank:'RB1', icon:'01_Cleat.svg'},
-  {metric:'MTF/A',   description:'Missed tackles forced per rushing attempt',       rank:'RB2', icon:'02_Tackle.svg'},
-  {metric:'YCO/A',   description:'Yards after Contact per Attempt', rank:'RB1',
+  {metric:'YPC',     description:'Yards Per Carry/Attempt (Rushing)',                       rank:'RB1', icon:'01_Cleat.svg'},
+  {metric:'MTF/A',   description:'Missed Tackles Forced per Attempt (Rushing)',       rank:'RB2', icon:'02_Tackle.svg'},
+  {metric:'YCO/A',   description:'Yards after Contact per Attempt (Rushing)', rank:'RB1',
      icon:'03_Strength.svg'},
   {metric:'EXPLSV%', description:'Explosive Rush Rate • % of rushes that go for 10+ yards',               rank:'RB1', icon:'04_Speed.svg'},
-  {metric:'RYOE',    description:'Rushing yards above expected (vs. model)',        rank:'RB4', icon:'05_Statistics.svg'},
-  {metric:'TGT',     description:'Total pass targets',                             rank:'RB5', icon:'06_Accuracy.svg'},
-  {metric:'TS%',     description:'% of team pass targets',                        rank:'RB3', icon:'07_Analytics.svg'},
-  {metric:'recYDS',  description:'Total receiving yards',                         rank:'RB4', icon:'08_Receptions.svg'},
+  {metric:'RYOE',    description:'Rushing Yards Over Expected (Situational vs. RB Average)',        rank:'RB4', icon:'05_Statistics.svg'},
+  {metric:'TGT',     description:'Total pass Targets',                             rank:'RB5', icon:'06_Accuracy.svg'},
+  {metric:'TS%',     description:'Target Share • % of team pass targets',                        rank:'RB3', icon:'07_Analytics.svg'},
+  {metric:'recYDS',  description:'Total Receiving Yards',                         rank:'RB4', icon:'08_Receptions.svg'},
 ];
 
 const escapeHTML = text => String(text).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));

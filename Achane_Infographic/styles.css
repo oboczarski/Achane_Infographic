@@ -41,9 +41,9 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
 /* Player photo is a transparent PNG derived from the supplied head-to-torso image. */
 .player {
   position:absolute;
-  left: -136px;
-  top: 12px;
-  width: 820px;
+  left: -156px;
+  top: 22px;
+  width: 800px;
   height:auto;
   z-index:2;
   filter: drop-shadow(0px 0px 5px #0ff8) drop-shadow(0px 0px 23px #4ffa) drop-shadow(24px 6px 17px rgba(0,0,0,.57)) drop-shadow(3px 0 13px rgba(21,218,228,.11));
@@ -53,7 +53,7 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
 /* The logo is extracted as a separate visual asset, not part of the backdrop. */
 .team-logo {
   position:absolute;
-  left:432px;
+  left: 402px;
   top:1px;
   width:197px;
   height:176px;
@@ -63,20 +63,21 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
   }
 .headline {
   position:absolute;
-  left: 625px;
-  top: 12px;
+  left: 597px;
+  top: 10px;
   z-index:4;
   margin:0;
   white-space:nowrap;
   font-size: 97px;
-  font-weight:1000;
+  font-weight: 800;
   font-style:italic;
-  letter-spacing: -7px;
+  letter-spacing: -4px;
   line-height:1;
   transform:scaleX(.94);
   transform-origin:left top;
   text-shadow:0 5px 0 rgba(0,0,0,.8),0 9px 8px rgba(0,0,0,.8);
   font-family: 'Bruno Ace SC';
+  -webkit-text-stroke: 4px;
   }
 .headline .name-first {color:#fafafa;}
 .headline .name-last {color:#25ebed;margin-left: 26px;text-shadow:0 5px 0 rgba(0,0,0,.7),0 0 16px rgba(11,242,237,.19);}
@@ -92,6 +93,7 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
   background: linear-gradient(180deg, #01758e 0%, #028aa3 45%, #038098 100%);
   border: 3px solid #f53e06;
   box-shadow:inset 0 2px 11px rgba(253,155,38,.28),0 0 15px rgba(255,108,10,.32),0 4px 9px #000a;
+  border-radius: 10px;
   }
 .season-flag span {
   display:block;
@@ -110,7 +112,7 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
 .flag-spark {position:absolute;top: 150px;height:3px;z-index:3;background: #fc4305;filter:drop-shadow(0 0 9px #ff8023);}
 .spark-left {left:627px;width:78px;}.spark-right{left:1380px;width:106px;}
 
-.stats {position:absolute;left: 530px;top: 191px;width:982px;z-index:5;display:grid;gap: 14px;}
+.stats {position:absolute;left: 540px;top: 191px;width: 954px;z-index:5;display:grid;gap: 14px;}
 .stat-row {
   height: 71px;
   position:relative;
@@ -144,7 +146,7 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
   filter:drop-shadow(0 2px 2px #00191e) drop-shadow(0 0 3px rgba(181,255,255,.18));
   }
 .stat-short {flex:0 0 227px;display:flex;align-items:center;padding-left: 9px;height:73%;border-right:3px solid rgba(239,246,244,.96);font-style:italic;font-weight: 800;font-size: 34px;line-height:1;white-space:nowrap;text-shadow:1px 3px 2px #001013;transform:skewX(11deg);font-family: 'Bruno Ace SC';letter-spacing: 0px;-webkit-text-stroke: 2px;}
-.stat-detail {flex:1;padding-left: 17px;font-weight: 300;font-size:22px;line-height: 1;letter-spacing: 0;transform:skewX(11deg);text-shadow: none;font-family: 'Google Sans flex';font-variation-settings: "wdth" 100;}
+.stat-detail {flex:1;padding-left: 17px;font-weight: 300;font-size: 25px;line-height: 1;letter-spacing: 0;transform:skewX(11deg);text-shadow: none;font-family: 'Google Sans flex';font-variation-settings: "wdth" 100;}
 .rank-plate {
   align-self:stretch;
   flex:0 0 148px;
@@ -179,9 +181,9 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
   -webkit-text-fill-color:transparent;
 }
 .rank-1 {background-image: linear-gradient(180deg, #fffce0 0%, #e3c976 24%, #fff3be 47%, #fef5c6 62%, #e0be7a 83%, #b47b11 100%);filter: brightness(1.1) drop-shadow(0 2px 1px #000) drop-shadow(0 0 1px #000);}
-.rank-2 {background-image: linear-gradient(180deg,#ffffff 0%,#dee9f2 27%,#e9f2f8 49%,#f8fdff 64%,#aebfcb 84%,#8295a7 100%);}
-.rank-3 {background-image: linear-gradient(180deg,#ffebdf 0%,#e9b3a5 24%,#fbd3bd 47%,#ffe1d1 62%,#c27c77 85%,#fbd3bd 100%);}
-.rank-4,.rank-5 {background-image: linear-gradient(180deg,#d59e60 0%,#eec28e 49%,#ffdab0 63%,#b7773c 85%,#eec28e 100%);}
+.rank-2 {background-image: linear-gradient(180deg, #7995a8 0%, #c5d9e7 49%, #b1d2df 64%, #7995a8 84%, #8295a7 100%);filter: brightness(1.2) drop-shadow(0 2px 1px #000) drop-shadow(0 0 1px #000);}
+.rank-3 {background-image: linear-gradient(180deg, #5396bc 0%, #d1eeff 59%, #4185ac 100%);}
+.rank-4,.rank-5 {background-image: linear-gradient(180deg, #C58B93 0%, #e7d1c7 47%, #ffe1d1 62%, #C58B93 100%);filter: brightness(1) saturate(0.8) drop-shadow(0 2px 1px #000);}
 .rank-inline {font-weight:1000;display:inline-block;filter:drop-shadow(0 1px 1px #030e10);}
 
 .nameplate {
@@ -228,8 +230,8 @@ body { display:grid; place-items:center; overflow-x:hidden; font-family:var(--fo
 .takeaway-title .second {font-size:56px;font-weight:1000;color:#06e5e9;letter-spacing:-1.4px;}
 .chevrons{font-weight:900;font-size:66px;line-height:1;font-style:normal;vertical-align:middle;color:#0adfe5;letter-spacing:-15px;margin:0 25px 0 6px;text-shadow:0 0 10px #02cbd6;}
 .takeaway-separator{height:81px;width:3px;flex:0 0 3px;background:#e2f8f7;box-shadow:0 0 3px #fff;}
-.takeaway-copy{padding:0 28px;font-weight: 200;font-size: 25px;line-height:1.24;letter-spacing:-.4px;font-family: 'Google Sans flex';font-variation-settings: "wdth" 105,
+.takeaway-copy{padding:0 28px;font-weight: 200;font-size: 28px;line-height: 1.1;letter-spacing: -0.5px;font-family: 'Google Sans flex';font-variation-settings: "wdth" 105,
 "slnt" 0;}
-.takeaway-copy strong{font-weight:1000;}
+.takeaway-copy strong{font-weight: 600;}
 
 @media (prefers-reduced-motion:reduce) {*,*::before,*::after{animation:none !important;}}
