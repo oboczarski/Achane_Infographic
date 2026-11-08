@@ -4,8 +4,9 @@
 const stats = [
   {metric:'YPC',     description:'Rushing yards per attempt',                       rank:'RB1', icon:'01_Cleat.svg'},
   {metric:'MTF/A',   description:'Missed tackles forced per rushing attempt',       rank:'RB2', icon:'02_Tackle.svg'},
-  {metric:'YCO/A',   description:'Rushing yards gained after contact per attempt', rank:'RB1', icon:'03_Strength.svg'},
-  {metric:'EXPLSV%', description:'% of rushes that go for 10+ yards',               rank:'RB1', icon:'04_Speed.svg'},
+  {metric:'YCO/A',   description:'Yards after Contact per Attempt', rank:'RB1',
+     icon:'03_Strength.svg'},
+  {metric:'EXPLSV%', description:'Explosive Rush Rate • % of rushes that go for 10+ yards',               rank:'RB1', icon:'04_Speed.svg'},
   {metric:'RYOE',    description:'Rushing yards above expected (vs. model)',        rank:'RB4', icon:'05_Statistics.svg'},
   {metric:'TGT',     description:'Total pass targets',                             rank:'RB5', icon:'06_Accuracy.svg'},
   {metric:'TS%',     description:'% of team pass targets',                        rank:'RB3', icon:'07_Analytics.svg'},
